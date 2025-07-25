@@ -27,3 +27,10 @@ operatorgroup.operators.coreos.com "my-group" deleted
 minikube stop
 minikube start
 
+C:\Users\davem\Desktop\k8s-2025>kubectl delete pods -n olm --all
+pod "catalog-operator-74846dffc9-lggg8" deleted
+pod "f6549574de44f28a3732323c9b91e34ba802a89403d95345400a004830qrp2n" deleted
+pod "olm-operator-5898bd86cf-w2bkq" deleted
+pod "operatorhubio-catalog-77qf6" deleted
+pod "packageserver-5c47766557-jgm6z" deleted
+pod "packageserver-5c47766557-x666c" deleted
