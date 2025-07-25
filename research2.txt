@@ -1,0 +1,6 @@
+C:\Users\davem\Desktop\k8s-2025>kubectl logs --tail 10 -n olm catalog-operator-74846dffc9-lggg8
+
+time="2025-07-25T08:25:40Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+I0725 08:25:43.599638       1 event.go:282] Event(v1.ObjectReference{Kind:"Namespace", Namespace:"", Name:"daveoperators", UID:"4a597b04-55dd-4921-aa30-aafd586e36b5", 
+APIVersion:"v1", ResourceVersion:"2614", FieldPath:""}): type: 'Warning' reason: 'ResolutionFailed' 
+constraints not satisfiable: no operators found in channel stable of package postgresql-operator in the catalog referenced by subscription postgresoperator, subscription postgresoperator exists
