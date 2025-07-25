@@ -120,3 +120,45 @@ time="2025-07-25T10:10:30Z" level=warning msg="an error was encountered during r
 E0725 10:10:30.652090       1 queueinformer_operator.go:290] sync {"update" "olm/postgresoperator"} failed: Operation cannot be fulfilled on subscriptions.operators.coreos.com "postgresoperator": the object has been modified; please apply your changes to the latest version and try again
 time="2025-07-25T10:10:30Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
 
+C:\Users\davem\Desktop\k8s-2025>minikube stop
+* Stopping node "minikube"  ...
+* Powering off "minikube" via SSH ...
+* 1 node stopped.
+
+C:\Users\davem\Desktop\k8s-2025>minikube start
+* minikube v1.36.0 on Microsoft Windows 11 Home 10.0.22631.4317 Build 22631.4317
+* Using the docker driver based on existing profile
+* Starting "minikube" primary control-plane node in "minikube" cluster
+* Pulling base image v0.0.47 ...
+* Restarting existing docker container for "minikube" ...
+! Failing to connect to https://registry.k8s.io/ from inside the minikube container
+* To pull new external images, you may need to configure a proxy: https://minikube.sigs.k8s.io/docs/reference/networking/proxy/
+* Preparing Kubernetes v1.33.1 on Docker 28.1.1 ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: default-storageclass, storage-provisioner
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+C:\Users\davem\Desktop\k8s-2025>kubectl logs --tail 10 -n olm f6549574de44f28a3732323c9b91e34ba802a89403d95345400a004830qrp2n
+Defaulted container "extract" out of: extract, util (init), pull (init)
+time="2025-07-25T09:50:16Z" level=info msg="Using in-cluster kube client config"
+time="2025-07-25T09:50:16Z" level=info msg="Reading file" file=/bundle/manifests/clusterrole-postgres-pod.yaml
+time="2025-07-25T09:50:16Z" level=info msg="Reading file" file=/bundle/manifests/operatorconfigurations.acid.zalan.do.crd.yaml
+time="2025-07-25T09:50:16Z" level=info msg="Reading file" file=/bundle/manifests/postgres-operator.v1.4.0.clusterserviceversion.yaml
+time="2025-07-25T09:50:16Z" level=info msg="Reading file" file=/bundle/manifests/postgresqls.acid.zalan.do.crd.yaml
+time="2025-07-25T09:50:16Z" level=info msg="Reading file" file=/bundle/metadata/annotations.yaml
+
+C:\Users\davem\Desktop\k8s-2025>kubectl logs --tail 10 -n olm catalog-operator-74846dffc9-lggg8
+time="2025-07-25T10:15:36Z" level=info msg="state.Key.Namespace=olm state.Key.Name=operatorhubio-catalog state.State=READY"
+time="2025-07-25T10:15:36Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+time="2025-07-25T10:15:38Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+time="2025-07-25T10:15:38Z" level=warning msg="could not unambiguously infer package name for \"packageserver\" (found 0 distinct package names)"
+time="2025-07-25T10:15:38Z" level=info msg="considered csvs without properties annotation during resolution: [packageserver]"
+time="2025-07-25T10:15:38Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+time="2025-07-25T10:15:50Z" level=warning msg="could not unambiguously infer package name for \"packageserver\" (found 0 distinct package names)"
+time="2025-07-25T10:15:50Z" level=info msg="considered csvs without properties annotation during resolution: [packageserver]"
+time="2025-07-25T10:16:22Z" level=warning msg="could not unambiguously infer package name for \"packageserver\" (found 0 distinct package names)"
+time="2025-07-25T10:16:22Z" level=info msg="considered csvs without properties annotation during resolution: [packageserver]"
+
+C:\Users\davem\Desktop\k8s-2025>kubectl logs --tail 1 -n olm olm-operator-5898bd86cf-w2bkq
+{"level":"error","ts":1753438776.1609275,"logger":"controllers.operator","msg":"Could not update Operator status","request":"/postgres-operator.olm","error":"Operation cannot be fulfilled on operators.operators.coreos.com \"postgres-operator.olm\": the object has been modified; please apply your changes to the latest version and try again","stacktrace":"sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).reconcileHandler\n\t/build/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:298\nsigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem\n\t/build/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:253\nsigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1.2\n\t/build/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:216\nk8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext.func1\n\t/build/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:185\nk8s.io/apimachinery/pkg/util/wait.BackoffUntil.func1\n\t/build/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:155\nk8s.io/apimachinery/pkg/util/wait.BackoffUntil\n\t/build/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:156\nk8s.io/apimachinery/pkg/util/wait.JitterUntil\n\t/build/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:133\nk8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext\n\t/build/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:185\nk8s.io/apimachinery/pkg/util/wait.UntilWithContext\n\t/build/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:99"}
