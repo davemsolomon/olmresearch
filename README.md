@@ -661,3 +661,21 @@ status:
   packageName: postgres-operator
   provider:
     name: Zalando SE
+
+C:\Users\davem\Desktop\k8s-2025>kubectl create namespace daveoperators
+namespace/daveoperators created
+
+### Subscription.yml
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: postgresoperator
+  namespace: daveoperators
+spec:
+  channel: stable
+  name: postgresql-operator
+  source: operatorhubio-catalog
+  sourceNamespace: olm
+
+C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./subscription.yml
+subscription.operators.coreos.com/postgresoperator created
