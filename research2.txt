@@ -51,3 +51,8 @@ time="2025-07-25T09:51:23Z" level=info msg=syncing id=fh98M ip=install-vtmkd nam
 time="2025-07-25T09:51:24Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
 
 
+C:\Users\davem\Desktop\k8s-2025>kubectl get installplans --all-namespaces
+NAMESPACE       NAME            CSV                        APPROVAL    APPROVED
+daveoperators   install-vtmkd   postgres-operator.v1.4.0   Automatic   true
+
+
