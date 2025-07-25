@@ -1,5 +1,6 @@
-'''
 ## install docker and minikube using downloads from the internet via the browser
+
+make sure docker is running
 
 minikube start 
 
