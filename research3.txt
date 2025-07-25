@@ -12,3 +12,15 @@ installplan.operators.coreos.com "install-vtmkd" deleted
 C:\Users\davem\Desktop\k8s-2025>kubectl get installplan --all-namespaces
 NAMESPACE   NAME            CSV                        APPROVAL    APPROVED
 olm         install-494jf   postgres-operator.v1.4.0   Automatic   true
+
+minikube stop
+minikube start
+
+time="2025-07-25T10:29:39Z" level=error msg="failed to list bundles: rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 10.110.206.182:50051: connect: connection refused\"" catalog="{operatorhubio-catalog olm}"
+I0725 10:29:39.292351       1 event.go:282] Event(v1.ObjectReference{Kind:"Namespace", Namespace:"", Name:"olm", UID:"2e0aa66e-61f2-4a52-ad7b-726bee194366", APIVersion:"v1", ResourceVersion:"1277", FieldPath:""}): type: 'Warning' reason: 'ResolutionFailed' constraints not satisfiable: no operators found from catalog operatorhubio-catalog in namespace olm referenced by subscription postgresoperator, subscription postgresoperator exists
+time="2025-07-25T10:29:39Z" level=info msg="state.Key.Namespace=olm state.Key.Name=operatorhubio-catalog state.State=CONNECTING"
+time="2025-07-25T10:29:39Z" level=info msg="state.Key.Namespace=olm state.Key.Name=operatorhubio-catalog state.State=TRANSIENT_FAILURE"
+time="2025-07-25T10:29:39Z" level=warning msg="could not unambiguously infer package name for \"packageserver\" (found 0 distinct package names)"
+time="2025-07-25T10:29:39Z" level=info msg="considered csvs without properties annotation during resolution: [packageserver]"
+time="2025-07-25T10:29:39Z" level=error msg="failed to list bundles: rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp 10.110.206.182:50051: connect: connection refused\"" catalog="{operatorhubio-catalog olm}"
+I0725 10:29:39.985920       1 event.go:282] Event(v1.ObjectReference{Kind:"Namespace", Namespace:"", Name:"olm", UID:"2e0aa66e-61f2-4a52-ad7b-726bee194366", APIVersion:"v1", ResourceVersion:"1277", FieldPath:""}): type: 'Warning' reason: 'ResolutionFailed' constraints not satisfiable: no operators found from catalog operatorhubio-catalog in namespace olm referenced by subscription postgresoperator, subscription postgresoperator exists
