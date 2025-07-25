@@ -58,6 +58,36 @@ daveoperators   install-vtmkd   postgres-operator.v1.4.0   Automatic   true
 C:\Users\davem\Desktop\k8s-2025>kubectl apply -f https://raw.githubusercontent.com/zalando/postgres-operator/51135b07db0fb81f5fe5e6f2eab1d4d894f64cd4/manifests/postgresql.crd.yaml
 customresourcedefinition.apiextensions.k8s.io/postgresqls.acid.zalan.do created
 
+changing source and target namespace to both be olm in the subscription
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: postgresoperator
+  namespace: olm
+spec:
+  channel: stable
+  name: postgres-operator
+  source: operatorhubio-catalog
+  sourceNamespace: olm
+  installPlanApproval: Automatic
+
+C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./subscription.yml
+subscription.operators.coreos.com/postgresoperator created
+
+the failed message changed
+C:\Users\davem\Desktop\k8s-2025>kubectl logs --tail 10 -n olm catalog-operator-74846dffc9-lggg8
+time="2025-07-25T10:09:41Z" level=info msg="added to bundle, Kind=ClusterServiceVersion" configmap=olm/f6549574de44f28a3732323c9b91e34ba802a89403d95345400a00483050021 key=postgres-operator.v1.4.0.clusterserviceversion.yaml
+E0725 10:09:41.763519       1 queueinformer_operator.go:290] sync {"update" "olm/install-494jf"} failed: the server could not find the requested resource
+time="2025-07-25T10:09:41Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+time="2025-07-25T10:09:42Z" level=info msg=syncing id=HqudJ ip=install-494jf namespace=olm phase=Installing
+time="2025-07-25T10:09:42Z" level=info msg="added to bundle, Kind=ClusterRole" configmap=olm/f6549574de44f28a3732323c9b91e34ba802a89403d95345400a00483050021 key=clusterrole-postgres-pod.yaml
+time="2025-07-25T10:09:42Z" level=info msg="added to bundle, Kind=CustomResourceDefinition" configmap=olm/f6549574de44f28a3732323c9b91e34ba802a89403d95345400a00483050021 key=operatorconfigurations.acid.zalan.do.crd.yaml
+time="2025-07-25T10:09:42Z" level=info msg="added to bundle, Kind=ClusterServiceVersion" configmap=olm/f6549574de44f28a3732323c9b91e34ba802a89403d95345400a00483050021 key=postgres-operator.v1.4.0.clusterserviceversion.yaml
+time="2025-07-25T10:09:42Z" level=info msg="added to bundle, Kind=CustomResourceDefinition" configmap=olm/f6549574de44f28a3732323c9b91e34ba802a89403d95345400a00483050021 key=postgresqls.acid.zalan.do.crd.yaml
+E0725 10:09:42.567829       1 queueinformer_operator.go:290] sync {"update" "olm/install-494jf"} failed: the server could not find the requested resource
+time="2025-07-25T10:09:42Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+
+
 
 
 
