@@ -4,3 +4,22 @@ time="2025-07-25T08:25:40Z" level=info msg=syncing event=update reconciling="*v1
 I0725 08:25:43.599638       1 event.go:282] Event(v1.ObjectReference{Kind:"Namespace", Namespace:"", Name:"daveoperators", UID:"4a597b04-55dd-4921-aa30-aafd586e36b5", 
 APIVersion:"v1", ResourceVersion:"2614", FieldPath:""}): type: 'Warning' reason: 'ResolutionFailed' 
 constraints not satisfiable: no operators found in channel stable of package postgresql-operator in the catalog referenced by subscription postgresoperator, subscription postgresoperator exists
+
+in my subscription yml i accidentally said the operator was named posgresql-operator but it is actually postgres-operator
+
+### subscription.yml
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: postgresoperator
+  namespace: daveoperators
+spec:
+  channel: stable
+  name: postgres-operator
+  source: operatorhubio-catalog
+  sourceNamespace: olm
+  installPlanApproval: Automatic
+
+C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./subscription.yml
+subscription.operators.coreos.com/postgresoperator configured
+
