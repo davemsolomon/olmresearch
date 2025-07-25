@@ -960,4 +960,27 @@ metadata:
 ***********************************************
 https://olm.operatorframework.io/docs/tasks/install-operator-with-olm/
 
+### og.yml
+  apiVersion: operators.coreos.com/v1
+  kind: OperatorGroup
+  metadata:
+    name: my-group
+    namespace: daveoperators
+
+C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./og.yml
+operatorgroup.operators.coreos.com/my-group created
+
+### subscription.yml
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: postgresoperator
+  namespace: daveoperators
+spec:
+  channel: stable
+  name: postgresql-operator
+  source: operatorhubio-catalog
+  sourceNamespace: olm
+  installPlanApproval: Automatic
+
 
