@@ -9,3 +9,19 @@ subscription.operators.coreos.com "postgresoperator" deleted
 
 minikube stop
 minikube start
+
+still seeing references to daveoperators namespace
+C:\Users\davem\Desktop\k8s-2025>kubectl logs --tail 10 -n olm olm-operator-5898bd86cf-w2bkq
+time="2025-07-25T10:41:24Z" level=error msg="update target CSV failed" csv=postgres-operator.v1.4.0 error="Operation cannot be fulfilled on clusterserviceversions.operators.coreos.com \"postgres-operator.v1.4.0\": the object has been modified; please apply your changes to the latest version and try again" operator-ns=daveoperators target-ns=olm
+{"level":"error","ts":1753440086.572565,"logger":"controllers.operatorcondition","msg":"Error ensuring OperatorCondition Deployment EnvVars","request":"daveoperators/postgres-operator.v1.4.0","error":"Deployment.apps \"postgres-operator\" not found","stacktrace":"sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).reconcileHandler\n\t/build/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:298\nsigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem\n\t/build/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:253\nsigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1.2\n\t/build/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:216\nk8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext.func1\n\t/build/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:185\nk8s.io/apimachinery/pkg/util/wait.BackoffUntil.func1\n\t/build/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:155\nk8s.io/apimachinery/pkg/util/wait.BackoffUntil\n\t/build/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:156\nk8s.io/apimachinery/pkg/util/wait.JitterUntil\n\t/build/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:133\nk8s.io/apimachinery/pkg/util/wait.JitterUntilWithContext\n\t/build/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:185\nk8s.io/apimachinery/pkg/util/wait.UntilWithContext\n\t/build/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:99"}
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get operatorgroups --all-namespaces
+NAMESPACE       NAME               AGE
+daveoperators   my-group           138m
+olm             olm-operators      3h19m
+operators       global-operators   3h19m
+
+C:\Users\davem\Desktop\k8s-2025>kubectl delete operatorgroup my-group -n daveoperators
+operatorgroup.operators.coreos.com "my-group" deleted
+
+
