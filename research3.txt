@@ -5,3 +5,10 @@ daveoperators   install-vtmkd   postgres-operator.v1.4.0   Automatic   true
 olm             install-494jf   postgres-operator.v1.4.0   Automatic   true
 
 i am going to remove daveoperators installplan
+
+C:\Users\davem\Desktop\k8s-2025>kubectl delete installplan install-vtmkd -n daveoperators
+installplan.operators.coreos.com "install-vtmkd" deleted
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get installplan --all-namespaces
+NAMESPACE   NAME            CSV                        APPROVAL    APPROVED
+olm         install-494jf   postgres-operator.v1.4.0   Automatic   true
