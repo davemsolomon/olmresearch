@@ -983,4 +983,7 @@ spec:
   sourceNamespace: olm
   installPlanApproval: Automatic
 
+C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./subscription.yml
+subscription.operators.coreos.com/postgresoperator configured
+
 
