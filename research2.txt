@@ -38,4 +38,16 @@ time="2025-07-25T09:49:58Z" level=info msg=syncing id=9kl6M ip=install-vtmkd nam
 time="2025-07-25T09:49:58Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
 time="2025-07-25T09:50:03Z" level=info msg=syncing id=nsHZa ip=install-vtmkd namespace=daveoperators phase=Installing
 
+C:\Users\davem\Desktop\k8s-2025>kubectl logs --tail 10 -n olm catalog-operator-74846dffc9-lggg8
+time="2025-07-25T09:51:23Z" level=info msg="added to bundle, Kind=ClusterRole" configmap=olm/f6549574de44f28a3732323c9b91e34ba802a89403d95345400a00483050021 key=clusterrole-postgres-pod.yaml
+time="2025-07-25T09:51:23Z" level=info msg="added to bundle, Kind=CustomResourceDefinition" configmap=olm/f6549574de44f28a3732323c9b91e34ba802a89403d95345400a00483050021 key=operatorconfigurations.acid.zalan.do.crd.yaml
+time="2025-07-25T09:51:23Z" level=info msg="added to bundle, Kind=ClusterServiceVersion" configmap=olm/f6549574de44f28a3732323c9b91e34ba802a89403d95345400a00483050021 key=postgres-operator.v1.4.0.clusterserviceversion.yaml
+time="2025-07-25T09:51:23Z" level=info msg="added to bundle, Kind=CustomResourceDefinition" configmap=olm/f6549574de44f28a3732323c9b91e34ba802a89403d95345400a00483050021 key=postgresqls.acid.zalan.do.crd.yaml
+E0725 09:51:23.772805       1 queueinformer_operator.go:290] sync {"update" "daveoperators/install-vtmkd"} failed: the server could not find the requested resource
+time="2025-07-25T09:51:23Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+time="2025-07-25T09:51:23Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+time="2025-07-25T09:51:23Z" level=info msg=syncing id=qhzIT ip=install-vtmkd namespace=daveoperators phase=Failed
+time="2025-07-25T09:51:23Z" level=info msg=syncing id=fh98M ip=install-vtmkd namespace=daveoperators phase=Failed
+time="2025-07-25T09:51:24Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+
 
