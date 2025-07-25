@@ -34,3 +34,6 @@ pod "olm-operator-5898bd86cf-w2bkq" deleted
 pod "operatorhubio-catalog-77qf6" deleted
 pod "packageserver-5c47766557-jgm6z" deleted
 pod "packageserver-5c47766557-x666c" deleted
+
+minikube stop
+minikube start
