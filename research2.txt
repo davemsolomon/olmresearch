@@ -108,5 +108,15 @@ status:
   - olm
 
 
-
+C:\Users\davem\Desktop\k8s-2025>kubectl logs --tail 10 -n olm catalog-operator-74846dffc9-lggg8
+time="2025-07-25T10:10:29Z" level=info msg="added to bundle, Kind=CustomResourceDefinition" configmap=olm/f6549574de44f28a3732323c9b91e34ba802a89403d95345400a00483050021 key=postgresqls.acid.zalan.do.crd.yaml
+E0725 10:10:30.265021       1 queueinformer_operator.go:290] sync {"update" "olm/install-494jf"} failed: the server could not find the requested resource
+time="2025-07-25T10:10:30Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+time="2025-07-25T10:10:30Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+time="2025-07-25T10:10:30Z" level=info msg=syncing id=PrUgl ip=install-494jf namespace=olm phase=Failed
+time="2025-07-25T10:10:30Z" level=info msg=syncing id=3VwIc ip=install-494jf namespace=olm phase=Failed
+time="2025-07-25T10:10:30Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+time="2025-07-25T10:10:30Z" level=warning msg="an error was encountered during reconciliation" error="Operation cannot be fulfilled on subscriptions.operators.coreos.com \"postgresoperator\": the object has been modified; please apply your changes to the latest version and try again" event=update reconciling="*v1alpha1.Subscription" selflink=
+E0725 10:10:30.652090       1 queueinformer_operator.go:290] sync {"update" "olm/postgresoperator"} failed: Operation cannot be fulfilled on subscriptions.operators.coreos.com "postgresoperator": the object has been modified; please apply your changes to the latest version and try again
+time="2025-07-25T10:10:30Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
 
