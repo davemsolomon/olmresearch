@@ -679,3 +679,6 @@ spec:
 
 C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./subscription.yml
 subscription.operators.coreos.com/postgresoperator created
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get pods -n daveoperators
+No resources found in daveoperators namespace.
