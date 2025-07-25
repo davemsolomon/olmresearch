@@ -1,0 +1,11 @@
+C:\Users\davem\Desktop\k8s-2025>kubectl get subscription --all-namespaces
+NAMESPACE       NAME               PACKAGE             SOURCE                  CHANNEL
+daveoperators   postgresoperator   postgres-operator   operatorhubio-catalog   stable
+olm             postgresoperator   postgres-operator   operatorhubio-catalog   stable
+
+delete the daveoperators subscription
+C:\Users\davem\Desktop\k8s-2025>kubectl delete subscription postgresoperator -n daveoperators
+subscription.operators.coreos.com "postgresoperator" deleted
+
+minikube stop
+minikube start
