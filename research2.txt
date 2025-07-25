@@ -87,6 +87,25 @@ time="2025-07-25T10:09:42Z" level=info msg="added to bundle, Kind=CustomResource
 E0725 10:09:42.567829       1 queueinformer_operator.go:290] sync {"update" "olm/install-494jf"} failed: the server could not find the requested resource
 time="2025-07-25T10:09:42Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
 
+C:\Users\davem\Desktop\k8s-2025>kubectl get operatorgroup olm-operators -n olm -o yaml
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  annotations:
+    olm.providedAPIs: PackageManifest.v1.packages.operators.coreos.com
+  creationTimestamp: "2025-07-25T07:23:57Z"
+  generation: 1
+  name: olm-operators
+  namespace: olm
+  resourceVersion: "1286"
+  uid: 336406b5-7001-458d-9a99-3941dd9a75a6
+spec:
+  targetNamespaces:
+  - olm
+status:
+  lastUpdated: "2025-07-25T07:24:31Z"
+  namespaces:
+  - olm
 
 
 
