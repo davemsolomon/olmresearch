@@ -1,0 +1,7 @@
+i was confused about an error referring to install-vtmkd i didnt realize that was the name of the install plan
+C:\Users\davem\Desktop\k8s-2025>kubectl get installplan --all-namespaces
+NAMESPACE       NAME            CSV                        APPROVAL    APPROVED
+daveoperators   install-vtmkd   postgres-operator.v1.4.0   Automatic   true
+olm             install-494jf   postgres-operator.v1.4.0   Automatic   true
+
+i am going to remove daveoperators installplan
