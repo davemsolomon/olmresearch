@@ -680,3 +680,7 @@ spec:
 
 C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./subscription.yml
 subscription.operators.coreos.com/postgresoperator created
+
+C:\Users\davem>kubectl get subscriptions --all-namespaces
+NAMESPACE       NAME               PACKAGE               SOURCE                  CHANNEL
+daveoperators   postgresoperator   postgresql-operator   operatorhubio-catalog   stable
