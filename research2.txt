@@ -23,3 +23,19 @@ spec:
 C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./subscription.yml
 subscription.operators.coreos.com/postgresoperator configured
 
+C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./subscription.yml
+subscription.operators.coreos.com/postgresoperator configured
+
+C:\Users\davem\Desktop\k8s-2025>kubectl logs --tail 10 -n olm catalog-operator-74846dffc9-lggg8
+time="2025-07-25T09:49:48Z" level=info msg=syncing id=J3uSz ip=install-vtmkd namespace=daveoperators phase=Installing
+time="2025-07-25T09:49:53Z" level=info msg=syncing id=BG76G ip=install-vtmkd namespace=daveoperators phase=Installing
+time="2025-07-25T09:49:53Z" level=warning msg="status not equal, updating..." id=BG76G ip=install-vtmkd namespace=daveoperators phase=Installing
+time="2025-07-25T09:49:53Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+time="2025-07-25T09:49:53Z" level=info msg=syncing id=CUTL6 ip=install-vtmkd namespace=daveoperators phase=Installing
+time="2025-07-25T09:49:58Z" level=info msg=syncing id=RymoY ip=install-vtmkd namespace=daveoperators phase=Installing
+time="2025-07-25T09:49:58Z" level=warning msg="status not equal, updating..." id=RymoY ip=install-vtmkd namespace=daveoperators phase=Installing
+time="2025-07-25T09:49:58Z" level=info msg=syncing id=9kl6M ip=install-vtmkd namespace=daveoperators phase=Installing
+time="2025-07-25T09:49:58Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+time="2025-07-25T09:50:03Z" level=info msg=syncing id=nsHZa ip=install-vtmkd namespace=daveoperators phase=Installing
+
+
