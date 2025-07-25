@@ -957,3 +957,7 @@ kind: List
 metadata:
   resourceVersion: ""
 
+***********************************************
+https://olm.operatorframework.io/docs/tasks/install-operator-with-olm/
+
+
