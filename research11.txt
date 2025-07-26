@@ -29,3 +29,58 @@ subscription.operators.coreos.com/miniooperator created
 C:\Users\davem\Desktop\k8s-2025>kubectl get installplans --all-namespaces
 NAMESPACE   NAME            CSV                     APPROVAL    APPROVED
 daveio      install-wf7rl   minio-operator.v5.0.3   Automatic   true
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get installplan install-wf7rl -n daveio -o yaml
+apiVersion: operators.coreos.com/v1alpha1
+kind: InstallPlan
+metadata:
+  creationTimestamp: "2025-07-26T02:04:20Z"
+  generateName: install-
+  generation: 1
+  labels:
+    operators.coreos.com/minio-operator.daveio: ""
+  name: install-wf7rl
+  namespace: daveio
+  ownerReferences:
+  - apiVersion: operators.coreos.com/v1alpha1
+    blockOwnerDeletion: false
+    controller: false
+    kind: Subscription
+    name: miniooperator
+    uid: ade06e57-3587-4a89-a667-7703a475166f
+  resourceVersion: "1570"
+  uid: 9c7256c9-6bbe-46a6-a9dc-5d8cd9b843a9
+spec:
+  approval: Automatic
+  approved: true
+  clusterServiceVersionNames:
+  - minio-operator.v5.0.3
+  generation: 1
+status:
+  bundleLookups:
+  - catalogSourceRef:
+      name: operatorhubio-catalog
+      namespace: olm
+    conditions:
+    - message: bundle contents have not yet been persisted to installplan status
+      reason: BundleNotUnpacked
+      status: "True"
+      type: BundleLookupNotPersisted
+    - message: unpack job not yet started
+      reason: JobNotStarted
+      status: "True"
+      type: BundleLookupPending
+    identifier: minio-operator.v5.0.3
+    path: quay.io/operatorhubio/minio-operator@sha256:6c87300fd4c39689bdd2dc0a98769199b2e11f282fabe056c0fa7b4bd8afbf09
+    properties: '{"properties":[{"type":"olm.gvk","value":{"group":"minio.min.io","kind":"Tenant","version":"v2"}},{"type":"olm.gvk","value":{"group":"sts.min.io","kind":"PolicyBinding","version":"v1alpha1"}},{"type":"olm.package","value":{"packageName":"minio-operator","version":"5.0.3"}}]}'
+    replaces: ""
+  catalogSources: []
+  conditions:
+  - lastTransitionTime: "2025-07-26T02:04:20Z"
+    lastUpdateTime: "2025-07-26T02:06:56Z"
+    message: no operator group found that is managing this namespace
+    reason: InstallCheckFailed
+    status: "False"
+    type: Installed
+  phase: Installing
+
