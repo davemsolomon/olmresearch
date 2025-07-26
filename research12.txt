@@ -60,3 +60,21 @@ C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./miniosub.yml
 subscription.operators.coreos.com/miniooperator created
 
 C:\Users\davem\Desktop\k8s-2025>kubectl get installplan install-x4kz4 -n daveioop -o yaml
+
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get csv minio-operator.v5.0.3 -n daveioop -o yaml
+status:
+  cleanup: {}
+  conditions:
+  - lastTransitionTime: "2025-07-26T02:28:10Z"
+    lastUpdateTime: "2025-07-26T02:28:10Z"
+    message: SingleNamespace InstallModeType not supported, cannot configure to watch
+      one namespace
+    phase: Failed
+    reason: UnsupportedOperatorGroup
+  lastTransitionTime: "2025-07-26T02:28:10Z"
+  lastUpdateTime: "2025-07-26T02:28:10Z"
+  message: SingleNamespace InstallModeType not supported, cannot configure to watch
+    one namespace
+  phase: Failed
+  reason: UnsupportedOperatorGroup
