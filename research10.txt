@@ -1,0 +1,15 @@
+C:\Users\davem\Desktop\k8s-2025>kubectl create namespace daveio
+namespace/daveio created
+
+### miniosub.yml
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: miniooperator
+  namespace: daveio
+spec:
+  channel: stable
+  name: minio-operator
+  source: operatorhubio-catalog
+  sourceNamespace: olm
+  installPlanApproval: Automatic
