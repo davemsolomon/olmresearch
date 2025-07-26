@@ -3,6 +3,19 @@ C:\Users\davem\Desktop\k8s-2025>minikube delete
 C:\Users\davem\Desktop\k8s-2025>minikube start
 kubectl create -f https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/upstream/quickstart/crds.yaml
 kubectl create -f https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/upstream/quickstart/olm.yaml
+
+## catalogsource.yml
+  apiVersion: operators.coreos.com/v1alpha1
+  kind: CatalogSource
+  metadata:
+    name: operatorhubio-catalog
+    namespace: olm
+  spec:
+    sourceType: grpc
+    image: quay.io/operatorhubio/catalog:latest
+    displayName: Community Operators
+    publisher: OperatorHub.io
+
 C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./catalogsource.yml
 wait about 3 min and then
 C:\Users\davem\Desktop\k8s-2025>kubectl -n olm get packagemanifests
