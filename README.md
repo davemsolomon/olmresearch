@@ -5,3 +5,4 @@
 5. apply subscription
 6. look in installplan for guidance
 7. look in the csv for guidance
+8. tail logs - kubectl logs --tail 20 -n olm <pod_name>
