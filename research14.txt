@@ -1,6 +1,8 @@
 C:\Users\davem\Desktop\k8s-2025>minikube stop
 C:\Users\davem\Desktop\k8s-2025>minikube delete
 C:\Users\davem\Desktop\k8s-2025>minikube start
+
+## install olm
 kubectl create -f https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/upstream/quickstart/crds.yaml
 kubectl create -f https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/upstream/quickstart/olm.yaml
 
@@ -23,7 +25,7 @@ C:\Users\davem\Desktop\k8s-2025>kubectl -n olm get packagemanifests
 ###########################################
 catalog_source_container runs in olm namespace
 minio_operator_container runs in daveioop namespace
-minio_container runs in ?? namespace
+minio_container runs in daveioop namespace
 ###########################################
 
 
