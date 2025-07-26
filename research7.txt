@@ -263,3 +263,12 @@ status:
     status: Unknown
   startTime: "2025-07-26T00:53:00Z"
 
+C:\Users\davem\Desktop\k8s-2025>kubectl get crd --all-namespaces
+NAME                                          CREATED AT
+catalogsources.operators.coreos.com           2025-07-26T00:41:10Z
+clusterserviceversions.operators.coreos.com   2025-07-26T00:41:11Z
+installplans.operators.coreos.com             2025-07-26T00:41:11Z
+operatorconditions.operators.coreos.com       2025-07-26T00:41:11Z
+operatorgroups.operators.coreos.com           2025-07-26T00:41:11Z
+operators.operators.coreos.com                2025-07-26T00:41:11Z
+subscriptions.operators.coreos.com            2025-07-26T00:41:11Z
