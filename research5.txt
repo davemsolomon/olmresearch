@@ -1,0 +1,32 @@
+C:\Users\davem\Desktop\k8s-2025>kubectl get installplan install-494jf -n olm -o yaml
+apiVersion: operators.coreos.com/v1alpha1
+kind: InstallPlan
+...
+status:
+  bundleLookups:
+  - catalogSourceRef:
+      name: operatorhubio-catalog
+      namespace: olm
+    identifier: postgres-operator.v1.4.0
+    path: quay.io/operatorhubio/postgres-operator@sha256:76af21ce79818a1a9eb7711b7630e5797736121a9af9025f142312c15e036735
+    properties: '{"properties":[{"type":"olm.gvk","value":{"group":"acid.zalan.do","kind":"OperatorConfiguration","version":"v1"}},{"type":"olm.gvk","value":{"group":"acid.zalan.do","kind":"postgresql","version":"v1"}},{"type":"olm.package","value":{"packageName":"postgres-operator","version":"1.4.0"}}]}'
+    replaces: postgres-operator.v1.3.0
+  catalogSources: []
+  conditions:
+  - lastTransitionTime: "2025-07-25T10:10:29Z"
+    lastUpdateTime: "2025-07-25T10:10:29Z"
+    message: the server could not find the requested resource
+    reason: InstallComponentFailed
+    status: "False"
+    type: Installed
+  message: the server could not find the requested resource
+  phase: Failed
+
+can i drop into this pod and see if it can get to quay.io? quay.io/operatorhubio/postgres-operator
+C:\Users\davem\Desktop\k8s-2025>kubectl exec --stdin --tty catalog-operator-74846dffc9-bwkv8 -n olm -- wget quay.io/operatorhubio/postgres-operator
+Connecting to quay.io (54.87.207.157:80)
+Connecting to quay.io:443 (3.232.5.128:443)
+wget: note: TLS certificate validation not implemented
+wget: server returned error: HTTP/1.1 308 PERMANENT REDIRECT
+command terminated with exit code 1
+
