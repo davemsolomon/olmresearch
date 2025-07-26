@@ -58,3 +58,5 @@ spec:
 
 C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./miniosub.yml
 subscription.operators.coreos.com/miniooperator created
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get installplan install-x4kz4 -n daveioop -o yaml
