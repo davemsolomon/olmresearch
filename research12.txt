@@ -20,15 +20,18 @@ C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./catalogsource.yml
 wait about 3 min and then
 C:\Users\davem\Desktop\k8s-2025>kubectl -n olm get packagemanifests
 
+C:\Users\davem\Desktop\k8s-2025>kubectl create namespace daveioop
 C:\Users\davem\Desktop\k8s-2025>kubectl create namespace daveio
-namespace/daveio created
 
 ## og.yml
 apiVersion: operators.coreos.com/v1alpha2
 kind: OperatorGroup
 metadata:
-  name: my-op-group
-  namespace: daveio
+  name: io-op-group
+  namespace: daveioop
+spec:
+  targetNamespaces:
+  - daveio
 
 C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./og.yml
 
@@ -38,7 +41,7 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   name: miniooperator
-  namespace: daveio
+  namespace: daveioop
 spec:
   channel: stable
   name: minio-operator
