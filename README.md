@@ -1,1 +1,2 @@
-see research.txt
+1. install docker
+2. intall minikube
