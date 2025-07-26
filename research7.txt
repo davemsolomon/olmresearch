@@ -756,3 +756,25 @@ time="2025-07-26T01:13:20Z" level=info msg=syncing id=qWvFm ip=install-cvc9g nam
 time="2025-07-26T01:13:20Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
 time="2025-07-26T01:13:20Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
 time="2025-07-26T01:13:21Z" level=info msg=syncing event=update reconciling="*v1alpha1.Subscription" selflink=
+
+C:\Users\davem\Desktop\k8s-2025>kubectl logs --tail 20 -n olm olm-operator-5898bd86cf-dd7bh
+E0726 01:18:33.925830       1 queueinformer_operator.go:290] sync {"update" "olm/postgres-operator.v1.4.0"} failed: requirements were not met
+time="2025-07-26T01:18:33Z" level=info msg="requirements were not met" csv=postgres-operator.v1.4.0 id=5/D8r namespace=olm phase=Pending
+E0726 01:18:33.951526       1 queueinformer_operator.go:290] sync {"update" "olm/postgres-operator.v1.4.0"} failed: requirements were not met
+time="2025-07-26T01:18:33Z" level=info msg="requirements were not met" csv=postgres-operator.v1.4.0 id=5GsTZ namespace=olm phase=Pending
+E0726 01:18:33.965769       1 queueinformer_operator.go:290] sync {"update" "olm/postgres-operator.v1.4.0"} failed: requirements were not met
+time="2025-07-26T01:18:33Z" level=info msg="requirements were not met" csv=postgres-operator.v1.4.0 id=r9aFb namespace=olm phase=Pending
+E0726 01:18:33.985277       1 queueinformer_operator.go:290] sync {"update" "olm/postgres-operator.v1.4.0"} failed: requirements were not met
+time="2025-07-26T01:18:34Z" level=info msg="checking packageserver"
+time="2025-07-26T01:18:34Z" level=info msg="checking postgres-operator.v1.4.0"
+time="2025-07-26T01:18:34Z" level=info msg="requirements were not met" csv=postgres-operator.v1.4.0 id=zwzdd namespace=olm phase=Pending
+E0726 01:18:34.342543       1 queueinformer_operator.go:290] sync {"update" "olm/postgres-operator.v1.4.0"} failed: requirements were not met
+time="2025-07-26T01:18:34Z" level=info msg="requirements were not met" csv=postgres-operator.v1.4.0 id=PZFMm namespace=olm phase=Pending
+E0726 01:18:34.518230       1 queueinformer_operator.go:290] sync {"update" "olm/postgres-operator.v1.4.0"} failed: requirements were not met
+time="2025-07-26T01:18:34Z" level=info msg="requirements were not met" csv=postgres-operator.v1.4.0 id=o2xV5 namespace=olm phase=Pending
+E0726 01:18:34.852650       1 queueinformer_operator.go:290] sync {"update" "olm/postgres-operator.v1.4.0"} failed: requirements were not met
+time="2025-07-26T01:18:35Z" level=info msg="requirements were not met" csv=postgres-operator.v1.4.0 id=Ay+2L namespace=olm phase=Pending
+time="2025-07-26T01:19:24Z" level=info msg="checking packageserver"
+time="2025-07-26T01:19:24Z" level=info msg="checking postgres-operator.v1.4.0"
+time="2025-07-26T01:21:06Z" level=info msg="checking postgres-operator.v1.4.0"
+time="2025-07-26T01:21:06Z" level=info msg="checking packageserver"
