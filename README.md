@@ -1,4 +1,4 @@
-Recipe for spinning up operator pod  
+*Recipe for spinning up operator pod*   
   1. install docker
   2. install minikube
   3. install olm
@@ -7,10 +7,10 @@ Recipe for spinning up operator pod
   6. create operator group
   5. apply subscription
 
-troubleshooting
-     look in installplan for guidance  
-     look in the csv for guidance  
-     tail logs - kubectl logs --tail 20 -n olm <pod_name>  
+*troubleshooting*  
+- look in installplan for guidance  
+- look in the csv for guidance  
+- tail logs - kubectl logs --tail 20 -n olm <pod_name>  
 
 
 look at research14.txt to see successful creation of minio operator pod  
