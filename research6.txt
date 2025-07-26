@@ -13,6 +13,9 @@ C:\Users\davem\Desktop\k8s-2025>minikube start
 * Preparing Kubernetes v1.33.1 on Docker 28.1.1 ...
 * Verifying Kubernetes components...
   - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+! Enabling 'default-storageclass' returned an error: running callbacks: [sudo KUBECONFIG=/var/lib/minikube/kubeconfig /var/lib/minikube/binaries/v1.33.1/kubectl apply --force -f /etc/kubernetes/addons/storageclass.yaml: Process exited with status 1
+stdout:
 
 https://kubernetes.io/releases/
 Latest Release:1.33.3 (released: 2025-07-15)
