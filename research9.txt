@@ -1,0 +1,15 @@
+### miniosub.yml
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: miniooperator
+  namespace: olm
+spec:
+  channel: stable
+  name: minio-operator
+  source: operatorhubio-catalog
+  sourceNamespace: olm
+  installPlanApproval: Automatic
+
+C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./miniosub.yml
+subscription.operators.coreos.com/miniooperator created
