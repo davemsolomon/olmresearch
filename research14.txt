@@ -1,0 +1,63 @@
+C:\Users\davem\Desktop\k8s-2025>minikube stop
+C:\Users\davem\Desktop\k8s-2025>minikube delete
+C:\Users\davem\Desktop\k8s-2025>minikube start
+kubectl create -f https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/upstream/quickstart/crds.yaml
+kubectl create -f https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/upstream/quickstart/olm.yaml
+
+## catalogsource.yml
+  apiVersion: operators.coreos.com/v1alpha1
+  kind: CatalogSource
+  metadata:
+    name: operatorhubio-catalog
+    namespace: olm
+  spec:
+    sourceType: grpc
+    image: quay.io/operatorhubio/catalog:latest
+    displayName: Community Operators
+    publisher: OperatorHub.io
+
+C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./catalogsource.yml
+wait about 3 min and then
+C:\Users\davem\Desktop\k8s-2025>kubectl -n olm get packagemanifests
+
+###########################################
+catalog_source_container runs in olm namespace
+minio_operator_container runs in daveioop namespace
+minio_container runs in daveio namespace
+###########################################
+
+
+C:\Users\davem\Desktop\k8s-2025>kubectl create namespace daveioop
+C:\Users\davem\Desktop\k8s-2025>kubectl create namespace daveio
+
+## og.yml
+apiVersion: operators.coreos.com/v1alpha2
+kind: OperatorGroup
+metadata:
+  name: io-op-group
+  namespace: daveioop
+spec:
+  targetNamespaces:
+  - daveio
+
+C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./og.yml
+
+
+## minosub.yml
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: miniooperator
+  namespace: daveioop
+spec:
+  channel: stable
+  name: minio-operator
+  source: operatorhubio-catalog
+  sourceNamespace: olm
+  installPlanApproval: Automatic
+
+C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./miniosub.yml
+subscription.operators.coreos.com/miniooperator created
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get installplan install-x4kz4 -n daveioop -o yaml
+
