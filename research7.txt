@@ -95,4 +95,41 @@ ecr-secret-operator                        Community Operators   3m12s
 istio                                      Community Operators   3m12s
 ...
 
+## subscription.yml
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: postgresoperator
+  namespace: olm
+spec:
+  channel: stable
+  name: postgres-operator
+  source: operatorhubio-catalog
+  sourceNamespace: olm
+  installPlanApproval: Automatic
+
+C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./subscription.yml
+subscription.operators.coreos.com/postgresoperator created
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get installplans --all-namespaces
+NAMESPACE   NAME            CSV                        APPROVAL    APPROVED
+olm         install-cvc9g   postgres-operator.v1.4.0   Automatic   true
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get pods --all-namespaces
+NAMESPACE     NAME                                                              READY   STATUS      RESTARTS      AGE
+kube-system   coredns-674b8bbfcf-cwd2c                                          1/1     Running     0             15m
+kube-system   etcd-minikube                                                     1/1     Running     0             15m
+kube-system   kube-apiserver-minikube                                           1/1     Running     0             15m
+kube-system   kube-controller-manager-minikube                                  1/1     Running     0             15m
+kube-system   kube-proxy-msqfd                                                  1/1     Running     0             15m
+kube-system   kube-scheduler-minikube                                           1/1     Running     0             15m
+kube-system   storage-provisioner                                               1/1     Running     1 (15m ago)   15m
+olm           catalog-operator-74846dffc9-blmwj                                 1/1     Running     0             11m
+olm           f6549574de44f28a3732323c9b91e34ba802a89403d95345400a004830578vc   0/1     Completed   0             35s
+olm           olm-operator-5898bd86cf-dd7bh                                     1/1     Running     0             11m
+olm           operatorhubio-catalog-5qm42                                       1/1     Running     0             10m
+olm           packageserver-74c975f487-99fcr                                    1/1     Running     0             10m
+olm           packageserver-74c975f487-f7tpv                                    1/1     Running     0             10m
+
+
 
