@@ -1,0 +1,3 @@
+C:\Users\davem\Desktop\k8s-2025>minikube stop
+C:\Users\davem\Desktop\k8s-2025>minikube delete
+C:\Users\davem\Desktop\k8s-2025>minikube start
