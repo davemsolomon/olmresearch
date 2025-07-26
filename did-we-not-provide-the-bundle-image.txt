@@ -1,0 +1,29 @@
+after learning about olm and googling the word "bundle"
+it seems that when doing olm, catalog sources and operators, an operator image should have an associated operator bundle image
+
+https://olm.operatorframework.io/docs/tasks/creating-operator-bundle/#:~:text=Bundle%20images,Dockerfile%20and%20building%20that%20image:
+An Operator Bundle is built as a scratch (i.e non-runnable) container image that contains information about the operator manifests and metadata inside the image(stored in a database inside the image). The image can then be pushed and pulled from an OCI-compliant container registry.  
+
+
+I had a strong hunch that somewhere there was likely a reference to a bundle image stored in the IBM container registry
+https://github.com/IBM/cloud-pak/blob/master/repo/case/ibm-cp-fncm-case/5.7.0/OLM/images.txt
+```
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:011095ea8bf453ca1b88fb9468ac6510b954f328ea2b60666f733cfd50b28c18
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:03036fcef354b0252a4a1f87bbab881bf92f018c1390621bc36d911f2f5745bb
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:0a768e8ce4aaf5b425f4161f9c90bc322df005653244c69310d8764ef2133d24
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:19a5eeb8c0b25d392e4c43953a1b2e9c7ea57871193820bf4019e91058307b4e
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:1f368f85f419873055b33f913e647b14c56ec93f20aca30525d28f499a73a700
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:2d1ca9793facf719058f9a87e197788a30e5dfc88bb3f4744e084440dc6f313d
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:33dd507ae6f3a9ad9e78b94997806b6791252752e1cf8d0609e63cb4373a3619
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:5a671286647418ee242d0a8cc6e3493e0e2a8a1ef12dd17103d819633ea9bfa5
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:82fc5301492bbbd680f919bac7f1d79d505c19c3421fef62b5bbfdea76ade6a4
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:9a0fd25ad74c6688a48d8de48628c26c01f9fef4acabd29e7cc694a717edd176
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:a203176fd7658f3f08d807e7c0bd3edfbdce3c25f49c767fc0c7f23ab2b850a1
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:b3f6a1bf1a2a4a92de8d7f0b2c4b93035862f987644c2833905b6da21bd090e5
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:d493cadf186ad4bd462615ccff64b1f66f7639ddb871aa67058fe932fe9ee242
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:e87d9056787b934746faeca2fb386c1dcc8f7fd09b4fce3bb909c04f9c92c292
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:ef0a7343c790df4c9b1e86afc0c1d64ea6fa5649e6205d251ccff9e04ca420e7
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:f21ca291f9aea6d67bca0b51a18832f99e6f7142b9f82be011b020b4a34c872e
+icr.io/cpopen/ibm-fncm-operator-bundle@sha256:fa26186ebe9b3aa72358219c1694fe214b615873d5238f822aa3e93dc50743c9
+```
+
