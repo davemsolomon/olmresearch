@@ -8,7 +8,11 @@
   5. apply subscription
 
 ### troubleshooting 
-- look in installplan for guidance - kubectl get installplans --all-namespaces - kubectl get installplan <installplan_name> -o yaml
+- look in installplan for guidance
+```
+kubectl get installplans --all-namespaces
+kubectl get installplan <installplan_name> -o yaml
+```
 - look in the csv for guidance - kubectl get csvs - kubectl get csv <csv_name> -o yaml
 - tail logs - kubectl logs --tail 20 -n olm <pod_name>  
 
