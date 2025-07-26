@@ -272,3 +272,8 @@ operatorconditions.operators.coreos.com       2025-07-26T00:41:11Z
 operatorgroups.operators.coreos.com           2025-07-26T00:41:11Z
 operators.operators.coreos.com                2025-07-26T00:41:11Z
 subscriptions.operators.coreos.com            2025-07-26T00:41:11Z
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get csv --all-namespaces
+NAMESPACE   NAME                       DISPLAY             VERSION   REPLACES                   PHASE
+olm         packageserver              Package Server      0.18.3                               Succeeded
+olm         postgres-operator.v1.4.0   Postgres-Operator   1.4.0     postgres-operator.v1.3.0   Pending
