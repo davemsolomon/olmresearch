@@ -3,3 +3,4 @@ C:\Users\davem\Desktop\k8s-2025>minikube delete
 C:\Users\davem\Desktop\k8s-2025>minikube start
 kubectl create -f https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/upstream/quickstart/crds.yaml
 kubectl create -f https://raw.githubusercontent.com/operator-framework/operator-lifecycle-manager/master/deploy/upstream/quickstart/olm.yaml
+C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./catalogsource.yml
