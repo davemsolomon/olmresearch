@@ -13,3 +13,8 @@ spec:
 
 C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./miniosub.yml
 subscription.operators.coreos.com/miniooperator created
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get installplans -n olm
+NAME            CSV                        APPROVAL    APPROVED
+install-cvc9g   postgres-operator.v1.4.0   Automatic   true
+install-s68rt   minio-operator.v5.0.3      Automatic   true
