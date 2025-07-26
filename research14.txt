@@ -954,3 +954,22 @@ status:
     status: Present
     version: v1
 
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get pods --all-namespaces
+NAMESPACE     NAME                                                              READY   STATUS      RESTARTS        AGE
+daveioop      console-5d74cf49c-52twr                                           1/1     Running     0               2m26s
+daveioop      minio-operator-588d69bc4c-8cgwg                                   1/1     Running     0               2m26s
+kube-system   coredns-674b8bbfcf-xz5cl                                          1/1     Running     0               7m38s
+kube-system   etcd-minikube                                                     1/1     Running     0               7m43s
+kube-system   kube-apiserver-minikube                                           1/1     Running     0               7m43s
+kube-system   kube-controller-manager-minikube                                  1/1     Running     0               7m43s
+kube-system   kube-proxy-n66rt                                                  1/1     Running     0               7m38s
+kube-system   kube-scheduler-minikube                                           1/1     Running     0               7m43s
+kube-system   storage-provisioner                                               1/1     Running     1 (7m15s ago)   7m41s
+olm           2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032rmbkx   0/1     Completed   0               2m56s
+olm           catalog-operator-74846dffc9-6c4jq                                 1/1     Running     0               6m36s
+olm           olm-operator-5898bd86cf-thkb2                                     1/1     Running     0               6m36s
+olm           operatorhubio-catalog-tcmr2                                       1/1     Running     0               6m
+olm           packageserver-d44cf874-cz48s                                      1/1     Running     0               5m59s
+olm           packageserver-d44cf874-hh8bp                                      1/1     Running     0               5m59s
+
