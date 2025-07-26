@@ -84,3 +84,11 @@ status:
     type: Installed
   phase: Installing
 
+## og.yml
+apiVersion: operators.coreos.com/v1alpha2
+kind: OperatorGroup
+metadata:
+  name: my-group
+  namespace: daveio
+
+kubectl apply -f ./og.yml
