@@ -23,7 +23,7 @@ C:\Users\davem\Desktop\k8s-2025>kubectl -n olm get packagemanifests
 ###########################################
 catalog_source_container runs in olm namespace
 minio_operator_container runs in daveioop namespace
-minio_container runs in daveio namespace
+minio_container runs in ?? namespace
 ###########################################
 
 
@@ -36,9 +36,6 @@ kind: OperatorGroup
 metadata:
   name: io-op-group
   namespace: daveioop
-spec:
-  targetNamespaces:
-  - daveio
 
 C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./og.yml
 
