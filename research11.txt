@@ -92,3 +92,9 @@ metadata:
   namespace: daveio
 
 kubectl apply -f ./og.yml
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get operatorgroups --all-namespaces
+NAMESPACE   NAME               AGE
+daveio      my-group           1s
+olm         olm-operators      16m
+operators   global-operators   16m
