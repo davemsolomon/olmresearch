@@ -27,7 +27,7 @@ namespace/daveio created
 apiVersion: operators.coreos.com/v1alpha2
 kind: OperatorGroup
 metadata:
-  name: my-group
+  name: my-op-group
   namespace: daveio
 
 C:\Users\davem\Desktop\k8s-2025>kubectl apply -f ./og.yml
