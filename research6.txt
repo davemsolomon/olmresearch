@@ -14,4 +14,18 @@ C:\Users\davem\Desktop\k8s-2025>minikube start
 * Verifying Kubernetes components...
   - Using image gcr.io/k8s-minikube/storage-provisioner:v5
 
-  
+https://kubernetes.io/releases/
+Latest Release:1.33.3 (released: 2025-07-15)
+
+C:\Users\davem\Desktop\k8s-2025>minikube stop
+* Stopping node "minikube"  ...
+* Powering off "minikube" via SSH ...
+* 1 node stopped.
+
+C:\Users\davem\Desktop\k8s-2025>minikube delete
+* Deleting "minikube" in docker ...
+* Deleting container "minikube" ...
+* Removing C:\Users\davem\.minikube\machines\minikube ...
+* Removed all traces of the "minikube" cluster.
+
+C:\Users\davem\Desktop\k8s-2025>minikube start
