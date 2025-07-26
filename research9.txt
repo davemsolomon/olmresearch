@@ -18,3 +18,194 @@ C:\Users\davem\Desktop\k8s-2025>kubectl get installplans -n olm
 NAME            CSV                        APPROVAL    APPROVED
 install-cvc9g   postgres-operator.v1.4.0   Automatic   true
 install-s68rt   minio-operator.v5.0.3      Automatic   true
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get installplan install-s68rt -n olm -o yaml
+apiVersion: operators.coreos.com/v1alpha1
+kind: InstallPlan
+metadata:
+  creationTimestamp: "2025-07-26T01:35:57Z"
+  generateName: install-
+  generation: 1
+  labels:
+    operators.coreos.com/minio-operator.olm: ""
+  name: install-s68rt
+  namespace: olm
+  ownerReferences:
+  - apiVersion: operators.coreos.com/v1alpha1
+    blockOwnerDeletion: false
+    controller: false
+    kind: Subscription
+    name: miniooperator
+    uid: 26988cc0-186d-4e13-8fde-6806d96ff796
+  - apiVersion: operators.coreos.com/v1alpha1
+    blockOwnerDeletion: false
+    controller: false
+    kind: Subscription
+    name: postgresoperator
+    uid: 0a38894e-3d16-4b30-a35b-0737ff7f907b
+  resourceVersion: "3736"
+  uid: bd70a971-8f76-4da8-b0b2-ece79086a063
+spec:
+  approval: Automatic
+  approved: true
+  clusterServiceVersionNames:
+  - minio-operator.v5.0.3
+  generation: 2
+status:
+  bundleLookups:
+  - catalogSourceRef:
+      name: operatorhubio-catalog
+      namespace: olm
+    identifier: minio-operator.v5.0.3
+    path: quay.io/operatorhubio/minio-operator@sha256:6c87300fd4c39689bdd2dc0a98769199b2e11f282fabe056c0fa7b4bd8afbf09
+    properties: '{"properties":[{"type":"olm.gvk","value":{"group":"minio.min.io","kind":"Tenant","version":"v2"}},{"type":"olm.gvk","value":{"group":"sts.min.io","kind":"PolicyBinding","version":"v1alpha1"}},{"type":"olm.package","value":{"packageName":"minio-operator","version":"5.0.3"}}]}'
+    replaces: ""
+  catalogSources: []
+  conditions:
+  - lastTransitionTime: "2025-07-26T01:36:16Z"
+    lastUpdateTime: "2025-07-26T01:36:16Z"
+    status: "True"
+    type: Installed
+  phase: Complete
+  plan:
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: operators.coreos.com
+      kind: ClusterServiceVersion
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: minio-operator.v5.0.3
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1alpha1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: ""
+      kind: ConfigMap
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: console-env
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: ""
+      kind: BundleSecret
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: console-sa-secret
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: ""
+      kind: Service
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: console
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: apiextensions.k8s.io
+      kind: CustomResourceDefinition
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: tenants.minio.min.io
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: ""
+      kind: Service
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: operator
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: apiextensions.k8s.io
+      kind: CustomResourceDefinition
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: policybindings.sts.min.io
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: ""
+      kind: Service
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: sts
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: ""
+      kind: ServiceAccount
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: minio-operator
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: rbac.authorization.k8s.io
+      kind: ClusterRole
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: minio-operator.v5.0.3-965f4dc95
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: rbac.authorization.k8s.io
+      kind: ClusterRoleBinding
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: minio-operator.v5.0.3-965f4dc95
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: ""
+      kind: ServiceAccount
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: console-sa
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: rbac.authorization.k8s.io
+      kind: ClusterRole
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: minio-operator.v5.0.3-5cfdfc5f88
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  - resolving: minio-operator.v5.0.3
+    resource:
+      group: rbac.authorization.k8s.io
+      kind: ClusterRoleBinding
+      manifest: '{"kind":"ConfigMap","name":"2d8658ea2618423c887d264fffb94747a928d511e0e93c9a7ea3478032f9f4b","namespace":"olm","catalogSourceName":"operatorhubio-catalog","catalogSourceNamespace":"olm","replaces":"","properties":"{\"properties\":[{\"type\":\"olm.gvk\",\"value\":{\"group\":\"minio.min.io\",\"kind\":\"Tenant\",\"version\":\"v2\"}},{\"type\":\"olm.gvk\",\"value\":{\"group\":\"sts.min.io\",\"kind\":\"PolicyBinding\",\"version\":\"v1alpha1\"}},{\"type\":\"olm.package\",\"value\":{\"packageName\":\"minio-operator\",\"version\":\"5.0.3\"}}]}"}'
+      name: minio-operator.v5.0.3-5cfdfc5f88
+      sourceName: operatorhubio-catalog
+      sourceNamespace: olm
+      version: v1
+    status: Created
+  startTime: "2025-07-26T01:36:13Z"
