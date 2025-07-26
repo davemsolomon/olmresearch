@@ -16,3 +16,8 @@ spec:
 
 C:\Users\davem\Desktop\k8s-2025>kubectl apply -f miniosub.yml
 subscription.operators.coreos.com/miniooperator created
+
+C:\Users\davem\Desktop\k8s-2025>kubectl get subscriptions -n olm
+NAME               PACKAGE             SOURCE                  CHANNEL
+miniooperator      minio-operator      operatorhubio-catalog   stable
+postgresoperator   postgres-operator   operatorhubio-catalog   stable
